@@ -3,7 +3,7 @@ import * as BooksAPI from "./BooksAPI";
 import "./App.css";
 import Main from "./Main";
 import Search from "./Search";
-
+import { Route } from "react-router-dom";
 class BooksApp extends React.Component {
   state = {
     showedBooks: [],
@@ -50,15 +50,28 @@ class BooksApp extends React.Component {
     console.log(this.state.searchedBooks);
     return (
       <div className="app">
-        <Main
-          changeShelf={this.changeShelf}
-          test="test"
-          books={this.state.showedBooks}
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <Main
+              changeShelf={this.changeShelf}
+              test="test"
+              books={this.state.showedBooks}
+            />
+          )}
         />
-        <Search
-          changeShelf={this.changeShelf}
-          searchedBooks={this.state.searchedBooks}
-          searchBooks={this.searchBooks}
+
+        <Route
+          exact
+          path="/search"
+          render={() => (
+            <Search
+              changeShelf={this.changeShelf}
+              searchedBooks={this.state.searchedBooks}
+              searchBooks={this.searchBooks}
+            />
+          )}
         />
       </div>
     );
