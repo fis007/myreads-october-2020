@@ -14,16 +14,19 @@ class Main extends Component {
               books={this.props.books}
               shelfValue="currentlyReading"
               shelfName="Currently Reading"
+              changeShelf={this.props.changeShelf}
             />
             <Shelf
               books={this.props.books}
               shelfValue="wantToRead"
               shelfName="Want to Read"
+              changeShelf={this.props.changeShelf}
             />
             <Shelf
               books={this.props.books}
               shelfValue="read"
               shelfName="Read"
+              changeShelf={this.props.changeShelf}
             />
           </div>
         </div>
