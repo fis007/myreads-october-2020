@@ -10,9 +10,21 @@ class Main extends Component {
         </div>
         <div className="list-books-content">
           <div>
-            <Shelf books={this.props.books} shelfName="Currently Reading" />
-            <Shelf books={this.props.books} shelfName="Want to Read" />
-            <Shelf books={this.props.books} shelfName="Read" />
+            <Shelf
+              books={this.props.books}
+              shelfValue="currentlyReading"
+              shelfName="Currently Reading"
+            />
+            <Shelf
+              books={this.props.books}
+              shelfValue="wantToRead"
+              shelfName="Want to Read"
+            />
+            <Shelf
+              books={this.props.books}
+              shelfValue="read"
+              shelfName="Read"
+            />
           </div>
         </div>
         <div className="open-search">
